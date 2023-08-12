@@ -11,7 +11,7 @@ int main(void)
 	for (y = 'a'; y <= 'z'; y++)
 	{
 		if (y != 'q' || y != 'e')
-			putchat(y);
+			putchar(y);
 	}
 
 	putchar('\n');
