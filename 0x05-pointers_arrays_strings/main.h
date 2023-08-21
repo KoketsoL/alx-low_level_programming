@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
-#define MAIN H
-#ifndef MAIN H
+#define MAIN_H_INCLUDED
+#ifndef MAIN_H_INCLUDED
 
 int _putchar(char c);
 void reset_to_98(int *n);
