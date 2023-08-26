@@ -5,34 +5,39 @@
  * @n: input
  * Return: string
  */
-char *cap_string(char *)
+char *cap_string(char *n)
 {
-	int index = 0;
+	int i;
 
-	while (index)
+	i = 0;
+	if (n[0] >= 'a' && n[0] <=  'z')
 	{
-		while (!([index] >= 'a' && [index] <= 'z'))
-
-		index++;
-
-		if ([index - 1] == ' ' ||
-		str[index - 1] == '\t' ||
-		str[index - 1] == '\n' ||
-		str[index - 1] == ',' ||
-		str[index - 1] == ';' ||
-		str[index - 1] == '.' ||
-		str[index - 1] == '!' ||
-		str[index - 1] == '?' ||
-		str[index - 1] == '"' ||
-		str[index - 1] == '(' ||
-		str[index - 1] == ')' ||
-		str[index - 1] == '{' ||
-		str[index - 1] == '}' ||
-		index == 0)
-			str[index] -= 32;
-		index++;
+		n[0] = n[0] - 32;
 	}
-	return (str);
+	for (i = 0; n[i] != '\0'; i++)
+	{
+		switch (n[i])
+		{
+			case ',':
+			case ';':
+			case '.':
+			case '!':
+			case '?':
+			case '"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+			case ' ':
+			case '\n':
+			case '\t':
+				if (n[i + 1] > 96 && n[i + 1] < 123)
+				{
+					n[i + 1] = n[i + 1] - 32;
+				}
+		}
+	}
+	return (n);
 
 }
 
